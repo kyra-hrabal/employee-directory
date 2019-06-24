@@ -31,3 +31,7 @@
     transform: rotate(360deg);
   }
 }
+
+.employee-card {
+  width: 18rem;
+}
