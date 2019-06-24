@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import hmm2 from './img/hmm2.png';
+import kathyhurst from './img/kathyhurst.jpg';
 import davidbrown from './img/davidbrown.jpg';
 import hollyhoward from './img/hollyhoward.jpg';
 
 var employees = [
   {
-    'employee': 'Kyra Hrabal',
+    'employee': 'Kathy Hurst',
     'description': 'Intelligent, harder worker.',
-    'image': hmm2
+    'image': kathyhurst
   },
   {
     'employee': 'David Brown',
@@ -41,7 +41,9 @@ class EmployeeList extends React.Component {
     return (
       <div className='employee-list'>
         <h1>Employee list for {this.state.company}</h1>
-        <EmployeeCard></EmployeeCard>
+        <div className='row justify-content-center'>
+          <EmployeeCard></EmployeeCard>
+        </div>
       </div>
     );
   }
@@ -57,7 +59,6 @@ class EmployeeCard extends React.Component {
   render() {
     return (
       employees.map(employee =>
-      <div className='row'>
         <div className='employee-card card'>
           <img src={employee.image} class="card-img-top" alt="..."></img>
           <div className='card-body'>
@@ -69,7 +70,6 @@ class EmployeeCard extends React.Component {
             class="btn btn-primary">View Skills</button>
           </div>
         </div>
-      </div>
       )
     );
   }
