@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import EmployeeCard from './EmployeeCard';
+import Navbar from './Navbar';
 
 class EmployeeList extends React.Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class EmployeeList extends React.Component {
     render() {
         return (
         <div className='employee-list'>
-            <h1>Employee list for {this.state.company}</h1>
+            <Navbar navbar={{header: 'Employee Viewer', isHome: true}}/>
             <div className='row justify-content-center'>
             <EmployeeCard></EmployeeCard>
             </div>

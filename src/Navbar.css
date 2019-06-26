@@ -1,0 +1,9 @@
+.Navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* .nav {
+    flex-grow: 1;
+} */
