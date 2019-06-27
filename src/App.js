@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
-import EmployeeList from './EmployeeList';
-import Admin from './Admin';
+import './css/App.css';
+import EmployeeList from './components/EmployeeList';
+import Admin from './components/Admin';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../css/App.css';
 import EmployeeCard from './EmployeeCard';
 import Navbar from './Navbar';
 

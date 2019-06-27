@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
-import kathyhurst from './img/kathyhurst.jpg';
-import davidbrown from './img/davidbrown.jpg';
-import hollyhoward from './img/hollyhoward.jpg';
+import '../css/App.css';
+import kathyhurst from '../img/kathyhurst.jpg';
+import davidbrown from '../img/davidbrown.jpg';
+import hollyhoward from '../img/hollyhoward.jpg';
 
 var employees = [
   {
