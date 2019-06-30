@@ -18,7 +18,7 @@ class EmployeeList extends React.Component {
                 <div className='carousel-inner'>
                     <div className ='carousel-item active'>
                         <div className='row justify-content-center'>
-                            <EmployeeCard group='1'/>
+                            <EmployeeCard />
                         </div>
                     </div>
                 </div>

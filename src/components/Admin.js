@@ -1,8 +1,22 @@
 import React from 'react';
 import '../css/Admin.css';
+import Dropdown from 'react-bootstrap/Dropdown';
 import EmployeeTableEntry from './EmployeeTableEntry';
 
+
 class Admin extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            location: 'Saint Petersburg, FL',
+        };
+        this.selectLocation = this.selectLocation.bind(this);
+    }
+    // Called when user selects location from dropdown
+    selectLocation(loc) {
+        this.setState({location: loc});
+        console.log('SELECTED:' + loc);
+    }
     render() {
         return (
             <div className='Admin'>
@@ -27,7 +41,7 @@ class Admin extends React.Component {
                     </div>
                     <div className='filters'>
                         <ul className='input-filters'>
-                            <li className='input-filter'>
+                            <li className='input-filter' key='statusDropdown'>
                                 <p>Status</p>
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
                                     Any
@@ -40,20 +54,20 @@ class Admin extends React.Component {
                                     <a className="dropdown-item active" href="#">5</a>
                                 </div>
                             </li>
-                            <li className='input-filter'>
-                                <p>Location</p>
-                                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                    All
-                                </button>
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a className="dropdown-item" href="#">1</a>
-                                    <a className="dropdown-item" href="#">2</a>
-                                    <a className="dropdown-item" href="#">3</a>
-                                    <a className="dropdown-item" href="#">4</a>
-                                    <a className="dropdown-item active" href="#">5</a>
-                                </div>
+                            <li className='input-filter' key='locationDropdown'>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                    Location
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item onSelect={() => this.selectLocation('Saint Petersburg, FL')}>Saint Petersburg, FL</Dropdown.Item>
+                                    <Dropdown.Item onSelect={() => this.selectLocation('New York, NY')}>New York, NY</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
                             </li>
-                            <li className='input-filter'>
+                            <li className='input-filter' key='nameSearch'>
                                 <p>Name</p>
                                 <input></input>
                             </li>
@@ -73,7 +87,7 @@ class Admin extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            <EmployeeTableEntry />                          
+                            <EmployeeTableEntry location={this.state.location}/>                          
                         </tbody>
                     </table>
                 </div>
