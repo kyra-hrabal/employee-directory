@@ -10,19 +10,19 @@ class Navbar extends React.Component {
                 {
                     this.props.navbar.isHome ?
                     <ul className='nav nav-tabs'>
-                        <li class='nav-item'>
-                            <a class="nav-link active" href="/">Home</a>
+                        <li className='nav-item'>
+                            <a className="nav-link active" href="/">Home</a>
                         </li>
-                        <li class='nav-item'>
-                            <a class="nav-link" href="/admin">Admin</a>
+                        <li className='nav-item'>
+                            <a className="nav-link" href="/admin">Admin</a>
                         </li>
                     </ul> :
                     <ul className='nav nav-tabs'>
-                        <li class='nav-item'>
-                            <a class="nav-link" href="/">Home</a>
+                        <li className='nav-item'>
+                            <a className="nav-link" href="/">Home</a>
                         </li>
-                        <li class='nav-item'>
-                            <a class="nav-link active" href="/admin">Admin</a>
+                        <li className='nav-item'>
+                            <a className="nav-link active" href="/admin">Admin</a>
                         </li>
                     </ul>
                 }

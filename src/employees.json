@@ -1,0 +1,46 @@
+{
+    "employees": [
+        {
+          "name": "Kathy Hurst",
+          "description": "Intelligent, harder worker.",
+          "image": "%PUBLIC_URL%/img/kathyhurst.jpg",
+          "location": "Saint Petersburg, FL",
+          "title": "Project Manager"
+        },
+        {
+          "name": "David Brown",
+          "description": "Imaginative designer and artist.",
+          "image": "../img/davidbrown.jpg",
+          "location": "New York, NY",
+          "title": "Senior Software Engineer"
+        },
+        {
+          "name": "Holly Howard",
+          "description": "Funny, clever, witty.",
+          "image": "../img/hollyhoward.jpg",
+          "location": "Saint Petersburg, FL",
+          "title": "Executive Assistant"
+        },
+        {
+          "name": "Miranda Ginsburg",
+          "description": "Motivated",
+          "image": "",
+          "location": "New York, NY",
+          "title": "Project Manager"
+        },
+        {
+          "name": "William Duntree",
+          "description": "Super friendly.",
+          "image": "",
+          "location": "Portland, OR",
+          "title": "Software Engineer"
+        },
+        {
+          "name": "Kelly Smith",
+          "description": "Smart",
+          "image": "",
+          "location": "New York, NY",
+          "title": "Software Engineer"
+        }
+      ]
+}

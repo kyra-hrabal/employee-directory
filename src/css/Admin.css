@@ -49,3 +49,23 @@ ul {
 .search {
     margin: 1rem;
 }
+
+.employee-image {
+    position: relative;
+    max-height: 100px;
+    max-width: auto;
+    transition: ease;
+    transform: scale(1);
+    z-index: 0;
+}
+
+.employee-image:hover {
+    position: relative;
+    transform: scale(5);
+    z-index: 5000;
+}
+
+.employee-row {
+    max-height: 200px;
+    z-index: 0;
+}

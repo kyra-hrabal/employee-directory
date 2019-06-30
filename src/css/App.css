@@ -35,3 +35,7 @@
 .employee-card {
  width: 18rem;
 }
+
+.employee-list {
+  background-color: lightgray; 
+}
