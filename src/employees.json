@@ -3,21 +3,21 @@
         {
           "name": "Kathy Hurst",
           "description": "Intelligent, harder worker.",
-          "image": "%PUBLIC_URL%/img/kathyhurst.jpg",
+          "image": "/img/kathyhurst.jpg",
           "location": "Saint Petersburg, FL",
           "title": "Project Manager"
         },
         {
           "name": "David Brown",
           "description": "Imaginative designer and artist.",
-          "image": "../img/davidbrown.jpg",
+          "image": "/img/davidbrown.jpg",
           "location": "New York, NY",
           "title": "Senior Software Engineer"
         },
         {
           "name": "Holly Howard",
           "description": "Funny, clever, witty.",
-          "image": "../img/hollyhoward.jpg",
+          "image": "/img/hollyhoward.jpg",
           "location": "Saint Petersburg, FL",
           "title": "Executive Assistant"
         },
