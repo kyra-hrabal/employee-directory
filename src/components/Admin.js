@@ -3,6 +3,14 @@ import '../css/Admin.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import EmployeeTableEntry from './EmployeeTableEntry';
 
+// Import mock employee data
+var data = require('../employees.json');
+console.log(data);
+var employees=data.employees;
+console.log(employees);
+
+ // Filter employee locations for unique list
+const locationsList = [...new Set(employees.map(item => item.location))];
 
 class Admin extends React.Component {
     constructor(props) {
@@ -61,9 +69,9 @@ class Admin extends React.Component {
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu>
-                                    <Dropdown.Item onSelect={() => this.selectLocation('Saint Petersburg, FL')}>Saint Petersburg, FL</Dropdown.Item>
-                                    <Dropdown.Item onSelect={() => this.selectLocation('New York, NY')}>New York, NY</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                    {locationsList.map( loc => 
+                                        <Dropdown.Item onSelect={() => this.selectLocation(loc)}>{loc}</Dropdown.Item>
+                                    )}
                                 </Dropdown.Menu>
                             </Dropdown>
                             </li>

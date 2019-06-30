@@ -11,12 +11,13 @@ class EmployeeTableEntry extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-          location: this.props.location
+          location: 'Saint Petersburg, FL'
         };
     }
+
     render() {
-        console.log("Render entry " + this.state.location);
-        var location = this.state.location;
+        // Filter employees by selected location
+        var location = this.props.location;
         var filteredEmployees = employees.filter(function (e) {
             return (e.location === location);
         })
