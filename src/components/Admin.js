@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/Admin.css';
-import Dropdown from 'react-bootstrap/Dropdown';
+import { Dropdown, InputGroup, Button, FormControl}  from 'react-bootstrap';
 import EmployeeTableEntry from './EmployeeTableEntry';
 
 // Import mock employee data
@@ -16,15 +16,24 @@ class Admin extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            location: 'Saint Petersburg, FL',
+            location: '',
+            filter: ''
         };
         this.selectLocation = this.selectLocation.bind(this);
+        this.onSearch = this.onSearch.bind(this);
     }
     // Called when user selects location from dropdown
     selectLocation(loc) {
         this.setState({location: loc});
         console.log('SELECTED:' + loc);
     }
+    
+    onSearch(event) {
+        console.log(this.input.value)
+        this.setState({filter: this.input.value})
+        event.preventDefault()
+    }
+
     render() {
         return (
             <div className='Admin'>
@@ -49,19 +58,6 @@ class Admin extends React.Component {
                     </div>
                     <div className='filters'>
                         <ul className='input-filters'>
-                            <li className='input-filter' key='statusDropdown'>
-                                <p>Status</p>
-                                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                    Any
-                                </button>
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a className="dropdown-item" href="#">1</a>
-                                    <a className="dropdown-item" href="#">2</a>
-                                    <a className="dropdown-item" href="#">3</a>
-                                    <a className="dropdown-item" href="#">4</a>
-                                    <a className="dropdown-item active" href="#">5</a>
-                                </div>
-                            </li>
                             <li className='input-filter' key='locationDropdown'>
                             <Dropdown>
                                 <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -75,13 +71,14 @@ class Admin extends React.Component {
                                 </Dropdown.Menu>
                             </Dropdown>
                             </li>
-                            <li className='input-filter' key='nameSearch'>
-                                <p>Name</p>
-                                <input></input>
+                            <li className='input-filter' key='search'>
+                                <form className='form-inline' onSubmit={this.onSearch}>
+                                    <input className='form-control'type="text" placeholder="Search for..." ref={(input) => this.input = input} />
+                                    <input className='btn btn-primary' type="submit" value="Search" />
+                                </form>
                             </li>
                         </ul>
                     </div>
-                    <button className='search'>Search</button>
                 </div>
                 <div className='table-container'>
                     <table className='table table-striped'>
@@ -95,29 +92,9 @@ class Admin extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            <EmployeeTableEntry location={this.state.location}/>                          
+                            <EmployeeTableEntry location={this.state.location} filter={this.state.filter}/>                          
                         </tbody>
                     </table>
-                </div>
-                <div className='table-footer'>
-                    <div className='footer-entries'>
-
-                    </div>
-                    <div className='footer-pages'>
-                        <nav>
-                            <ul className="pagination justify-content-end">
-                                <li className="page-item disabled">
-                                <a className="page-link" href="#" tabIndex="-1" aria-disabled="true">Previous</a>
-                                </li>
-                                <li className="page-item"><a className="page-link" href="#">1</a></li>
-                                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                <li className="page-item">
-                                <a className="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
                 </div>
             </div>
         )
