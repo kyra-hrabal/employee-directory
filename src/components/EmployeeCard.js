@@ -18,6 +18,8 @@ class EmployeeCard extends React.Component {
 
 
   render() {
+    // Split employees into 2 groups for now
+    // TODO: add dynamic pagination for this
     var employeeGroup = [];
     console.log('group: ' + this.props.group);
     if (this.props.group === '1') {

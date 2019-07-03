@@ -14,6 +14,7 @@ class EmployeeList extends React.Component {
         this.handleSelect = this.handleSelect.bind(this);
     }
 
+    // Update the slide index when user clicks next/previous
     handleSelect(selectedIndex, e) {
         this.setState({
             index: selectedIndex,

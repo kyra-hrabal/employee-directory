@@ -38,3 +38,17 @@ employees.json file. Then we have the search feature, where the user can enter i
 "Search". This will display the employees that have a substring match in their name, location, or 
 title. Another fun feature is when the user hovers over an employee's picture, the image will 
 increase in size.
+
+## Future updates
+In the future I would like implement actually storing the a new employee in either a database
+or json file. I would also like to add a remove employee feature on the Admin page. As for the 
+home page, I would add more styling to make it look nicer and also have the "View Skills" 
+button bring up a modal for that employee that gives more details about their job description.
+I also thought it might be nice to even remove the "View Skills" button and instead make it
+so that when the user hovers over an employee card, the card will rotate to show their 
+description similar to a baseball card. I would also try to refactor my code but I know that
+I could have made things more modular but since I am still new to React the biggest pain was
+trying to have the parent and child communicate.
+
+## Image sources
+I got my images from https://unsplash.com. They are all free stock photos.
