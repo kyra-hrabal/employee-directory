@@ -12,13 +12,23 @@ class EmployeeCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: null,
+      name: null
     };
-
   }
+
+
   render() {
+    var employeeGroup = [];
+    console.log('group: ' + this.props.group);
+    if (this.props.group === '1') {
+      employeeGroup = employees.slice(0, 3);
+    }
+    else if (this.props.group === '2') {
+      employeeGroup = employees.slice(3, 6);
+    }
+    console.log(employees);
     return (
-      employees.map(employee =>
+      employeeGroup.map(employee =>
         <div className='employee-card card'>
           <img src={process.env.PUBLIC_URL + employee.image} className="card-img-top" alt="..."></img>
           <div className='card-body'>
@@ -30,7 +40,7 @@ class EmployeeCard extends React.Component {
           </div>
         </div>
       )
-    );
+    )
   }
 }
 

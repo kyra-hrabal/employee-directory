@@ -1,33 +1,46 @@
 import React from 'react';
 import '../css/App.css';
 import EmployeeCard from './EmployeeCard';
+import Carousel from 'react-bootstrap/Carousel';
 import Navbar from './Navbar';
 
 class EmployeeList extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            index: 0,
+            direction: null
+        };
+        this.handleSelect = this.handleSelect.bind(this);
     }
+
+    handleSelect(selectedIndex, e) {
+        this.setState({
+            index: selectedIndex,
+            direction: e.direction
+        });
+    }
+
     render() {
+        const { index, direction } = this.state;
         return (
         <div className='employee-list'>
             <Navbar navbar={{header: 'Employee Viewer', isHome: true}}/>
-            <div className='carousel slide' data-ride='carousel'>
-                <div className='carousel-inner'>
-                    <div className ='carousel-item active'>
-                        <div className='row justify-content-center'>
-                            <EmployeeCard />
-                        </div>
+            <Carousel
+            activeIndex={index}
+            direction={direction}
+            onSelect={this.handleSelect}>
+                <Carousel.Item>
+                    <div className='row justify-content-center'>
+                            <EmployeeCard group='1'/>
                     </div>
-                </div>
-                <a className="carousel-control-prev" href="" role="button" data-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Previous</span>
-                </a>
-                <a className="carousel-control-next" href="" role="button" data-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Next</span>
-                </a>
-            </div>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <div className='row justify-content-center'>
+                            <EmployeeCard group='2'/>
+                    </div>
+                </Carousel.Item>
+            </Carousel>
         </div>
         );
     }

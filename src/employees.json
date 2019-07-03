@@ -23,21 +23,21 @@
         },
         {
           "name": "Miranda Ginsburg",
-          "description": "Motivated",
+          "description": "Motivated, proud woman.",
           "image": "/img/mirandaginsburg.jpg",
           "location": "New York, NY",
           "title": "Project Manager"
         },
         {
           "name": "William Duntree",
-          "description": "Super friendly.",
+          "description": "Friendly, smart, witty.",
           "image": "/img/williamduntree.jpg",
           "location": "Portland, OR",
           "title": "Software Engineer"
         },
         {
           "name": "Kelly Smith",
-          "description": "Smart",
+          "description": "Funny, hard worker.",
           "image": "/img/kellysmith.jpg",
           "location": "New York, NY",
           "title": "Software Engineer"
