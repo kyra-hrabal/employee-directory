@@ -40,7 +40,7 @@ class EmployeeTableEntry extends React.Component{
             employees = employees.filter(function (e) {
                 return (e.name.includes(filter)) ||
                         (e.location.includes(filter)) ||
-                        (e.title.includes(filter))
+                        (e.title.includes(filter));
             })
         }
         // Reset location and filter

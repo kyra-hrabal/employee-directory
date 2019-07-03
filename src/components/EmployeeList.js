@@ -6,9 +6,6 @@ import Navbar from './Navbar';
 class EmployeeList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-        company: 'Postlight',
-        };
     }
     render() {
         return (
