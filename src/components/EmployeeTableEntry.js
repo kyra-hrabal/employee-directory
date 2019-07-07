@@ -10,42 +10,38 @@ console.log(employees);
 class EmployeeTableEntry extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {
-          location: '',
-          filter: ''
-        };
         this.employees = employees;
     }
 
+    componentDidMount() {
+        console.log("Initial mount for EmployeeTableEntry");
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("Update of EmployeeTableEntry");
+        console.log("Current location props: " + this.props.location);
+        console.log("Old props location: " + prevProps.location);
+    }
+
     render() {
-        // Filter employees by selected location
-        var location = this.props.location;
-        this.state.location = location;
-        
-        // Filter employees by substring
-        var filter = this.props.filter;
-        this.state.filter = filter;
-
-        // Refresh employee dataset
-        employees = this.employees;
-
+        console.log('Rendering EmployeeTableEntry')
+        console.log('Location filter: ' + this.props.location);
+        console.log('Search filter: ' + this.props.filter);
         // If a location was selected, filter by location
-        if (this.state.location !== '') {
-            employees = employees.filter(function (e) {
-                return (e.location === location);
+        if (this.props.location !== '') {
+            employees = this.employees.filter (e => {
+                return (e.location === this.props.location);
             })
         }
         // If user hit "Search", filter by input string
-        if (this.state.filter !== '') {
-            employees = employees.filter(function (e) {
-                return (e.name.includes(filter)) ||
-                        (e.location.includes(filter)) ||
-                        (e.title.includes(filter));
+        if (this.props.filter !== '') {
+            employees = this.employees.filter(e => {
+                return (e.name.includes(this.props.filter)) ||
+                        (e.location.includes(this.props.filter)) ||
+                        (e.title.includes(this.props.filter));
             })
         }
-        // Reset location and filter
-        this.state.filter = '';
-        this.state.location = '';
+    
         var count = 0;
         return (
             employees.map(employee =>

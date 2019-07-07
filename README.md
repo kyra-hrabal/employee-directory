@@ -4,6 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### 'npm install'
+
+Run this command in order to install all the required npm libaries from
+the package.json. This is required before starting the Node server.
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
@@ -13,6 +18,7 @@ The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
 ### Home
+
 After starting up the react app via 'npm start' you will be redicted to http://localhost:3000.
 This is the homepage for my site. On this page is a carousel that holds 3 employees per slide.
 The parent class here is the EmployeeList.js and creates a Navbar and EmployeeCard classes.
@@ -25,6 +31,7 @@ ran out of time. I focused more on the admin page than on the home page. With th
 the "Admin" button to view the admin page.
 
 ## Admin
+
 I focused much more on completing the admin page. Here, we list all of the existing employees.
 The parent class here is the Admin.js class and creates a list of EmployeeTableEntry classes.
 The "Add Employee" button will pop up a modal form where the user can add a new employee.
@@ -40,6 +47,7 @@ title. Another fun feature is when the user hovers over an employee's picture, t
 increase in size.
 
 ## Future updates
+
 In the future I would like implement actually storing the a new employee in either a database
 or json file. I would also like to add a remove employee feature on the Admin page. As for the 
 home page, I would add more styling to make it look nicer and also have the "View Skills" 

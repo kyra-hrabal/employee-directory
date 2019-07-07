@@ -96,7 +96,7 @@ class Admin extends React.Component {
             <div className='Admin'>
                 <header>
                     <h1>Employee List</h1>
-                    <button className='btn btn-light' href="/home">Home</button>
+                    <button className='btn btn-light'>Home</button>
                 </header>
                 <Modal show={this.state.showModal} onHide={this.handleClose}>
                     <Modal.Header closeButton>
@@ -137,20 +137,7 @@ class Admin extends React.Component {
                     </Modal.Footer>
                 </Modal>
                 <div className='table-header'>
-                    <div className='show-entries'>
-                        <p>Show</p>
-                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                            5
-                        </button>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a className="dropdown-item" href="#">1</a>
-                            <a className="dropdown-item" href="#">2</a>
-                            <a className="dropdown-item" href="#">3</a>
-                            <a className="dropdown-item" href="#">4</a>
-                            <a className="dropdown-item active" href="#">5</a>
-                        </div>
-                        <p>entries</p>
-                    </div>
+                    
                     <div className='filters'>
                         <ul className='input-filters'>
                             <li className='input-filter' key='addEmployee'>
